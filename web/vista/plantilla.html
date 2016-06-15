@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es-ES">
+    <head>
+        <title>Plantilla ZX</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/base.css" type="text/css" />           <!-- estilos base -->
+        <link rel="stylesheet" href="css/menuPrincipal.css" type="text/css" />  <!-- estilos menu principal -->
+        
+        
+        <script type="text/javascript" src="recursos/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/"></script>
+        
+        <script type="text/javascript" src="js/efectoReset.js"></script>        <!-- Efecto RESET del menú principal -->
+        <script type="text/javascript" src="js/gamepad-menu.js"></script>       <!-- Mapeado del GAMEPAD para un menú-->
+        <script type="text/javascript" src="js/gamepad.js"></script>            <!-- GAMEPAD -->
+        
+        
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+                
+                efectoReset();
+                
+            });
+        
+            
+        </script>
+        
+        
+        
+        <script type="text/javascript">
+            // AUDIO
+            
+        </script>
+        
+        <style type="text/css">
+            
+                
+        </style>
+        
+        
+    </head>
+    <body>
+        <div id="pantalla">
+            <div id="menu" class="centrar">
+                <div class="titulo">
+                    <span>128</span>
+                    <img style="height: 16px;padding-left: 4em;" src="img/barrascolores.gif" />
+                </div>
+                <nav>
+                    <ul>
+                        <li tabindex="1"><a href="#">Cargar ROM</a></li>
+                        <li tabindex="2">Última ROM</li>
+                        <li tabindex="3">Top 10</li>
+                        <li tabindex="4">Histórico</li>
+                        <li tabindex="5">Votaciones</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <footer class="centrar">
+            <span>© 1986 Sinclair Research Ltd<br/>© 2016 Daniel Clemente</span>
+            <br/>
+            <p>En reproducción: <span id="salida"></span></p>
+            <audio>
+                
+            </audio>
+        </footer>
+        
+    </body>
+</html>

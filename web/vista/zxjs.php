@@ -14,11 +14,11 @@
 	            $(document).ready(function() {
 	                var jsspeccy = JSSpeccy('speccy', {
 	                    'autostart': true,
-	                    'autoload': false,
+	                    'autoload': true,
 	                    'scaleFactor': 2.3
 	                });
 					jsspeccy.setModel(JSSpeccy.Spectrum.<?php echo "MODEL_48K" ?>);
-					jsspeccy.loadFromUrl('<?php echo "roms48/star_wars.tap" ?>', {'autoload': true});				
+					jsspeccy.loadFromUrl('<?php echo "/web/ficheros/48k/bomb_jack.tap" ?>', {'autoload': true});				
 	            });
 	</script>
 	

@@ -1,0 +1,67 @@
+/* Estilos base de pantalla */
+
+@font-face{
+    font-family: 'zx';
+    src: url('../fonts/zxsp.ttf');        /* TODO: OJO con la ruta */
+}
+body{
+    font-family: 'zx';
+    height: 600px;    /* 1024x600 */
+    border-left: 112px solid black;
+    border-right: 112px solid black;
+    background-color: lightGrey;
+    margin: 0;
+    padding: 0;
+}
+footer{
+    top: -110px;
+    width: 60%;
+    
+}
+.centrar{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+#pantalla{
+    width: 660px; /*800*/
+    height: 460px; /*600*/
+    background-color: lightGrey;
+    border-width: 70px 90px 70px 90px;
+    border-style: solid;
+    border-color: lightGrey;
+}
+.titulo{
+    top: 100px;
+    width: 100%;
+    color: white;
+    background-color: black;
+    padding: 0;
+}
+ul{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+    padding-left: 1em;
+}
+a{
+    text-decoration: none;
+}
+
+.spectrum{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 1em;
+    width: 5em;
+}
+li:focus{
+    outline:0;
+    background-color: cyan;
+}
+:visited{
+    color: black;
+}

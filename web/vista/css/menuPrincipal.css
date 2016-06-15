@@ -1,0 +1,11 @@
+/* Estilo del menú principal */
+
+#menu{
+    top: 150px;
+    width: 220px;
+    height: 112px;
+    background-color: white;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
