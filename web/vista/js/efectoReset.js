@@ -10,4 +10,4 @@ function efectoReset(){
     $().focus(function(){
         $(this).css('background-color', 'cyan');
     });
-};
+}

@@ -5,7 +5,7 @@
     src: url('../fonts/zxsp.ttf');        /* TODO: OJO con la ruta */
 }
 body{
-    font-family: 'zx';
+    font-family: 'zx', Arial;
     height: 600px;    /* 1024x600 */
     border-left: 112px solid black;
     border-right: 112px solid black;
@@ -62,6 +62,6 @@ li:focus{
     outline:0;
     background-color: cyan;
 }
-:visited{
+:visited, :link{
     color: black;
 }

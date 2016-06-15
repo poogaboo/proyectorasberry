@@ -1,24 +1,26 @@
 //===========================================
-        // GAMEPAD
-        //===========================================
+// GAMEPAD
+//===========================================
             
-            var gamepad;
+            var gamepad = null;
             var texto = "";
             
-            //detectarGamepad();
-            window.setInterval(detectarGamepad, 300);
+            detectarGamepad();
+            //window.setInterval(detectarGamepad, 300);
             
             
             
             // Detección del gamepad y uso del primero disponible
             //===================================================
             function detectarGamepad(){
-                var hayGamepad = navigator.getGamepads() || navigator.webkitGetGamepads(); // navigator
-                if (hayGamepad){
-                    gamepad = hayGamepad[0]; // recogemos el primer gamepad: navigator.getGamepads()[0]
+                var listaGamepad = navigator.getGamepads() || navigator.webkitGetGamepads(); // navigator
+                gamepad = listaGamepad[0];
+                if (gamepad != undefined){
+                    //gamepad = listaGamepad[0]; // recogemos el primer gamepad: navigator.getGamepads()[0]
                     if (checkBotones() || checkDirecciones())
                         $('#salida').text(texto);                               // =========================
                 }
+                window.setInterval(detectarGamepad, 300);
             }
             
             
@@ -30,8 +32,10 @@
                     if (gamepad.buttons[i].pressed){
                         var botonPulsado = "boton" + (i + 1);
                         var miEvento = $.Event('keydown');
-                        miEvento.which = entradaPad[botonPulsado];
-                        $(document).trigger(miEvento);
+                        if (entradaPad.hasOwnProperty(botonPulsado)) {
+                            miEvento.which = entradaPad[botonPulsado];
+                            $(document).trigger(miEvento);
+                        }
                         
                        texto = "Detectado botón: " + (i + 1);                  // =========================
                         detectado = true;

@@ -5,7 +5,7 @@ var entradaPad = {
 	derecha: 39,
 	izquierda: 37,
 	
-	boton2: 13, // botón A , Enter
+	boton2: 13 // botón A , Enter
 /*	boton3: , // botón B
 	boton1: , // botón X
 	boton4: , // botón Y
@@ -24,12 +24,18 @@ $(document).on('keydown', function(e){
             cambiaTab("-1");
             break;
         case 9:
-            e.preventDefault();
+            e.preventDefault();                         // detención de la funcionlidad de la tecla 'tab'
+            cambiaTab((e.shiftKey)? "-1" : "1");        // detección de la tecla 'shift' para invertir el avance
+            break;
         case 40:
-            cambiaTab("1");
+            cambiaTab("1");        // detección de la tecla 'shift' para invertir el avance
             break;
         case 13:
-            $("li:focus > a").click();
+            var href = $(":focus > a").attr("href");
+            if (href != undefined) {
+                cambioBorde();                          // efecto color en el borde
+                window.location = href;                 // redirigimos la página
+            }
             break;
     }
 });
@@ -38,20 +44,17 @@ $(document).on('keydown', function(e){
 // Cambia el foco del menú
 function cambiaTab(valorSalto){
     var numTabActual = $(":focus").attr("tabindex");
+    if (numTabActual == undefined) {
+        $('li').first().focus();
+        numTabActual = $(":focus").attr("tabindex");
+    }
     var numTabs = $("[tabindex]").length;
     var nuevoValor = parseInt(numTabActual) + parseInt(valorSalto);
     
     if ( nuevoValor > 0 && nuevoValor <= numTabs)
         $("[tabindex=" + nuevoValor + "]").focus();
 }
-	
 
-$("li  a").click(function(){
-    $("#pantalla").css('border-color', 'red');
-    $("#pantalla").delay(1000);
-    $("#pantalla").css('border-color', 'cyan').delay(1000);
-    $("#pantalla").css('border-color', 'lightGrey');
-});
 			
 /*
 
